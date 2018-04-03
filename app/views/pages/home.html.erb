@@ -3,13 +3,19 @@
 <% if @current_user.present? %>
   Welcome Back <%= @current_user.email %>
   <h2>Your Cities!</h2>
-  <p>Rank in order of your favorite</p>
+  <p>Ranked in order of your favorites</p>
   <ol>
-    <li> <a href="#">city 1</a></li>
+    <li> <a href="#">city 1</a> (click for the things you did in that city)</li>
   </ol>
-  <h2>Did you visited a new city?</h2>
-    <form>
-      <label>City:</label>
-      
+  <h2>Did you visit a new city?</h2>
 
-    <% end %>
+
+
+  <form action="/cities" method="post">
+    <label>City:</label>
+    <input type="text" name="city[name]" placeholder="Hong Kong">
+    <button>Add Your New City</button>
+
+
+
+<% end %>
