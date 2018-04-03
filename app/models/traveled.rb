@@ -1,0 +1,2 @@
+class Traveled < ApplicationRecord
+end
