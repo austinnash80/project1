@@ -22,6 +22,13 @@
 <h2>View Your <%= @city.name %> Activities</h2>
 <p>Ranked in order of your favorite</p>
 
+<% if @city.activities.present? %>
+  <% @city.activities.each do |activity| %>
+    <p>
+      <%= link_to activity.activity1, activity_path(activity.id) %>
+    </p>
+  <% end %>
+<% end %>
 
 
 <ol>

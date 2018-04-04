@@ -4,6 +4,7 @@ class ActivitiesController < ApplicationController
 
   def create
     activity = Activity.create activity_params
+
     redirect_to activity_path(activity.id)
 
   end

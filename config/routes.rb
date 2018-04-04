@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'    # Sign in action
   delete '/login' => 'session#destroy' # Sign out
   post '/cities/:id' => 'cities#update'
+  post '/activities/:id' => 'activities#update'
   post '/activities/:id' => 'activities#show'
   # get '/cities/new' => 'cities#new'
   # get '/cities/:id' => 'cities#show', :as => 'city'
