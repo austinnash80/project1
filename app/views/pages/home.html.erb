@@ -2,20 +2,24 @@
 
 <% if @current_user.present? %>
   Welcome Back <%= @current_user.email %>
-  <h2>Your Cities!</h2>
-  <p>Ranked in order of your favorites</p>
-  <ol>
-    <li> <a href="#">city 1</a> (click for the things you did in that city)</li>
-  </ol>
-  <h2>Did you visit a new city?</h2>
 
-
-
+  <h2>Add Your New City Below!</h2>
   <form action="/cities" method="post">
     <label>City:</label>
     <input type="text" name="city[name]" placeholder="Hong Kong">
+    <label>Rank:</label>
+    <input type="number" name="city[rank]" placeholder="1">
     <button>Add Your New City</button>
 
+
+    <h2>Your Cities!</h2>
+    <p>Ranked in order of your favorites</p>
+
+    <% @cities.each do |city| %>
+      <p>
+        <%= link_to city.name, city_path(city.id) %>
+      </p>
+    <% end %>
 
 
 <% end %>
