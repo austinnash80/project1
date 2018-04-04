@@ -5,13 +5,15 @@
   <label>Rank:</label>
   <input type="text" name="city[rank]" placeholder="1" value="<%= @city.rank %>">
 
-  <button>Update City Rank</button>
+  <button>Update</button>
 </form>
 
 <h2>Add Activities from <%= @city.name %></h2>
-<form action="/cities/<%= @city.id %>" method="post">
+<form action="/activities" method="post">
   <label>Activity:</label>
-  <input type="text" name="city[name]" placeholder="Mission Beach Surf School" >
+  <input type="text" name="activity[activity1]" placeholder="Mission Beach Surf School" >
+  <label>Rank:</label>
+  <input type="number" name="activity[activity2]" placeholder="1" >
 
   <button>Add</button>
 </form>
@@ -20,6 +22,8 @@
 <h2>View Your <%= @city.name %> Activities</h2>
 <p>Ranked in order of your favorite</p>
 
+
+
 <ol>
-  <li><a href="#">Number 1</a></li>
+  <li><a href="#">Sample</a></li>
 </ol>

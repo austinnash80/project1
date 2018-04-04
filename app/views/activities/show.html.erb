@@ -1,0 +1,9 @@
+<h1><%= @activity.activity1 %></h1>
+
+<h2>Edit Activity Rank</h2>
+<form action="/activities/<%= @activity.id %>" method="post">
+  <label>Rank:</label>
+  <input type="text" name="activity[activity2]" placeholder="1" value="<%= @activity.activity2 %>">
+
+  <button>Update</button>
+</form>
