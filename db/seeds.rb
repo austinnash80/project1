@@ -11,7 +11,7 @@ u1 = User.create :email => 'austin@nash.com', :fname => 'austin', :lname => 'nas
 u2 = User.create :email => 'austin1@nash.com', :fname => 'austin1', :lname => 'nash1', :password => 'chicken'
 
 City.destroy_all
-c1 = City.create :name => 'sydney'
+c1 = City.create :name => 'Sydney'
 c2 = City.create :name => 'San Diego'
 
 Activity.destroy_all

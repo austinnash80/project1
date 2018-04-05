@@ -4,9 +4,7 @@ class ActivitiesController < ApplicationController
 
   def create
     activity = Activity.create activity_params
-
     redirect_to activity_path(activity.id)
-
   end
 
 
@@ -27,7 +25,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:activity1, :activity2)
+    params.require(:activity).permit(:event)
   end
 
 end

@@ -7,7 +7,7 @@
   <h2>What did you do in <%= @city.name %>?</h2>
   <form action="/activities" method="post" class="form-group">
     <label class="form-text text-muted">Activity:</label>
-    <input class="form-control" type="text" name="activity[activity1]" placeholder="Mission Beach Surf School" >
+    <input class="form-control" type="text" name="activity[event]" placeholder="Mission Beach Surf School" >
     <br>
     <button class="btn btn-primary">Add Activity</button>
   </form>
@@ -22,11 +22,12 @@
 
   <div class="list-group">
 
-
-
-    <h4>
-      <div class="list-group-item"> <a href="#">1. Sample Activity</a></div>
+  <% @city.activities.each do |activity| %>
+    <h4 class="list-group-item">
+      <%= link_to activity.event, activity_path(activity.id) %>
     </h4>
+  <% end %>
 
   </div>
+
 </div>

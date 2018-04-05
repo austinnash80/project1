@@ -5,8 +5,10 @@ class CitiesController < ApplicationController
 
   def create
     city = City.create city_params
+    @city = city.id
+    @user = @current_user.id
+    @user.cities << @city
     redirect_to city_path(city.id)
-
   end
 
   def index
@@ -26,7 +28,7 @@ class CitiesController < ApplicationController
     end
 
   def city_params
-    params.require(:city).permit(:name, :rank)
+    params.require(:city).permit(:name)
   end
 
 

@@ -1,14 +1,29 @@
 <div class="jumbotron">
-<h1><%= @activity.activity1 %></h1>
+<h1><%= @activity.event %></h1>
 </div>
 
-<h2>This is your <%= @activity.activity2 %> ranked activity</h2>
-<h3>Edit Rank</h3>
-<form action="/activities/<%= @activity.id %>" method="post">
-  <label>Rank:</label>
-  <input type="text" name="activity[activity2]" placeholder="1" value="<%= @activity.activity2 %>">
+<div class="col-sm-6">
+  <h1>Comming Soon:</h1>
+  <h3>Details About Your Activity</h3>
+  <form >
+    <label class="form-text text-muted">Date:</label>
+    <input class="form-control" type="text" name="activity[event]" placeholder="Jan 12" >
 
-  <button>Update</button>
-</form>
+    <label class="form-text text-muted">People:</label>
+    <input class="form-control" type="text" name="activity[event]" placeholder="Family" >
+
+    <label class="form-text text-muted">Pictures:</label>
+    <input class="form-control" type="text" name="activity[event]" placeholder="Upload" >
+    <br>
+    <button class="btn btn-primary">Add Details</button>
+  </form>
+
+  <br>
+
+</div>
+
+
+</div>
+
 
 <%= button_to 'Delete Activity', activity_path(@activity.id), :method => 'delete' %>
