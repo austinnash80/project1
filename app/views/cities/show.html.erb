@@ -6,7 +6,7 @@
 <div class="col-sm-6">
   <h2>What did you do in <%= @city.name %>?</h2>
   <form action="/activities" method="post" class="form-group">
-    <label class="form-text text-muted">Activity:</label>
+    <!-- <label class="form-text text-muted">Activity:</label> -->
     <input class="form-control" type="text" name="activity[event]" placeholder="Mission Beach Surf School" >
     <br>
     <input class="display-none" type="integer" name="activity[city_id]" value="<%= @city.id %>" >
@@ -18,7 +18,7 @@
 
 <div class="col-sm-6">
   <h2>Your <%= @city.name %> Activities</h2>
-  <p>Click for more details</p>
+  <h4>Click for more details</h4>
 
   <div class="list-group">
 
