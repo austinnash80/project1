@@ -7,11 +7,28 @@
   <h2>What did you do in <%= @city.name %>?</h2>
   <form action="/activities" method="post" class="form-group">
     <input class="form-control" type="text" name="activity[event]" placeholder="Mission Beach Surf School" >
+    <input class="display-none" type="integer" name="activity[city_id]" value="<%= @city.id %>" >
     <br>
-    <!-- <input class="display-none" type="integer" name="activity[city_id]" value="<%= @city.id %>" > -->
     <button class="btn btn-primary">Add Activity</button>
   </form>
   <br>
+
+    <!-- <h3>Add Details About Your Visit to <%= @city.name %></h3>
+    <h3>Comming Soon:</h3>
+    <form >
+      <label class="form-text text-muted">Date:</label>
+      <input class="form-control" type="text" name="activity[event]" placeholder="Jan 12" >
+
+      <label class="form-text text-muted">People:</label>
+      <input class="form-control" type="text" name="activity[event]" placeholder="Family" >
+
+      <label class="form-text text-muted">Pictures:</label>
+      <input class="form-control" type="text" name="activity[event]" placeholder="Upload" >
+      <br>
+      <button class="btn btn-primary">Submit</button>
+    </form>
+
+    <br> -->
 
 </div>
 
