@@ -4,11 +4,16 @@ class CitiesController < ApplicationController
 
 
   def create
-    city = City.create city_params
-    @city = city.id
-    @user = @current_user.id
-    @user.cities << @city
-    redirect_to city_path(city.id)
+    @city = City.create city_params
+    # @city = city.id
+    # @user = @current_user.id
+    if @city.save
+      @current_user.cities << @city
+      redirect_to city_path(@city.id)
+
+    else
+      redirect_to root_path # it worked!
+    end
   end
 
   def index
