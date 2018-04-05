@@ -1,25 +1,31 @@
-<h1>Home Page</h1>
+<div class="jumbotron">
+  <h1>Welcome to Traveled</h1>
+  <h4>Your Digital Travel Bookshelf</h4>
+</div>
+<!-- <p>Store all the places you've traveled and all the activities you've done. Even rank them to remind yourself of all the cool things you've done. Or share with friends as they plan their trips!</p> -->
 
-<% if @current_user.present? %>
-  Welcome Back <%= @current_user.email %>
+<div class="col-sm-6">
+  <% if @current_user.present? %>
 
-  <h2>Add Your New City Below!</h2>
-  <form action="/cities" method="post">
-    <label>City:</label>
-    <input type="text" name="city[name]" placeholder="Hong Kong">
-    <label>Rank:</label>
-    <input type="number" name="city[rank]" placeholder="1">
-    <button>Add Your New City</button>
-
-
-    <h2>Your Cities!</h2>
-    <p>Ranked in order of your favorites</p>
-
-    <% @cities.each do |city| %>
-      <p>
-        <%= link_to city.name, city_path(city.id) %>
-      </p>
-    <% end %>
+    <h2>Did You Visit a New City?</h2>
+    <form action="/cities" method="post" class="form-group">
+      <label class="form-text text-muted">City:</label>
+      <input type="text" name="city[name]" placeholder="Hong Kong" class="form-control">
+      <br>
+      <button class="btn btn-primary">Add Your New City</button>
+    </form>
+</div>
 
 
-<% end %>
+<div class="col-sm-6">
+  <h2>Your Cities!</h2>
+    <div class="list-group">
+
+      <% @current_user.cities.each do |city| %>
+        <h4>
+          <%= link_to city.name, city_path(city.id) %></div>
+        </h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

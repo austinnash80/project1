@@ -10,46 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404025835) do
+ActiveRecord::Schema.define(version: 20180404235651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.text "activity1"
-    t.text "activity2"
-    t.text "activity3"
+    t.text "event"
+    t.integer "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "activities_cities", id: false, force: :cascade do |t|
-    t.integer "activity_id"
-    t.integer "city_id"
   end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "traveleds", force: :cascade do |t|
-    t.text "country1"
-    t.text "country2"
-    t.text "country3"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "cities_users", id: false, force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.text "email"
     t.text "fname"
     t.text "lname"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
 end

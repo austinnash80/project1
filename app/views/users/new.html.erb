@@ -1,22 +1,38 @@
-<h1>Create New</h1>
 
+<h1 class="jumbotron">Create New Account</h1>
+
+
+<div class="col-sm-6">
+<div class="form-group">
 <%= form_for @user do |f| %>
 
-  <%= f.label :fname %>
+<div class="list-group-item">
+  <%= f.label :first_Name %>
   <%= f.text_field :fname %>
-
-  <%= f.label :lname %>
+</div>
+<div class="list-group-item">
+  <%= f.label :Last_Name %>
   <%= f.text_field :lname %>
-
+</div>
+<div class="list-group-item">
   <%= f.label :email %>
   <%= f.email_field :email %>
+</div>
 
+<div class="list-group-item">
   <%= f.label :password %>
   <%= f.password_field :password %>
+</div>
 
+<div class="list-group-item">
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
+</div>
 
+<br>
+
+<div class="btn btn-primary">
   <%= f.submit 'Sign Up!' %>
+</div>
 
 <% end %>

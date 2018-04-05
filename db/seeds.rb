@@ -7,13 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create :email => 'austin@nash.com', :fname => 'austin', :lname => 'nash'
-u2 = User.create :email => 'austin1@nash.com', :fname => 'austin1', :lname => 'nash1'
+u1 = User.create :email => 'austin@nash.com', :fname => 'austin', :lname => 'nash', :password => 'chicken'
+u2 = User.create :email => 'austin1@nash.com', :fname => 'austin1', :lname => 'nash1', :password => 'chicken'
 
-Traveled.destroy_all
-t1 = Traveled.create :country1 => 'San Fransico', :country2 => 'Bali', :country3 => 'Hong Kong'
-t2 = Traveled.create :country1 => 'San Fransico', :country2 => 'San Diego', :country3 => 'Hong Kong'
+City.destroy_all
+c1 = City.create :name => 'sydney'
+c2 = City.create :name => 'San Diego'
 
 Activity.destroy_all
-a1 = Activity.create :activity1 => 'number1', :activity2 => 'number2', :activity3 => 'number3'
-a1 = Activity.create :activity1 => 'number4', :activity2 => 'number5', :activity3 => 'number6'
+a1 = Activity.create :event => 'beach'
+a2 = Activity.create :event => 'surf'
+
+c1.activities << a1
+c2.activities << a2
+
+u1.cities << c1 << c2
+u2.cities << c1 << c2

@@ -9,15 +9,22 @@
   </head>
 
   <body>
-    <nav>
-      <%= link_to 'Home', root_path %>
+    <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+      <div class="navbar-brand" ><%= link_to 'Home', root_path %></div>
       <% if @current_user.present? %>
-        <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
+        <div class="navbar-brand"> <%= link_to "Sign Out", login_path, :method => 'delete' %></div>
+         <div class="navbar-brand">Welcome Back <%= @current_user.fname %>!</div>
       <% else %>
-        <%= link_to 'Sign Up', new_user_path %>
-        <%= link_to 'Sign In', login_path %>
+        <div class="navbar-brand"><%= link_to 'Sign Up', new_user_path %></div>
+        <div class="navbar-brand"><%= link_to 'Sign In', login_path %></div>
       <% end %>
+    </div>
+    </div>
     </nav>
     <%= yield %>
+  </div>
   </body>
 </html>

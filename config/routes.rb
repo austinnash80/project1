@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/cities/:id' => 'cities#update'
   post '/activities/:id' => 'activities#update'
   post '/activities/:id' => 'activities#show'
+  delete '/activities/:id' => 'activities#destroy'
   # get '/cities/new' => 'cities#new'
   # get '/cities/:id' => 'cities#show', :as => 'city'
   # post '/cities' => 'cities#create'

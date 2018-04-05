@@ -1,3 +1,4 @@
 class City < ApplicationRecord
-  has_and_belongs_to_many :activities
+  has_many :activities
+  belongs_to :user, :optional => true
 end

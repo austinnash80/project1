@@ -20,6 +20,12 @@ class ActivitiesController < ApplicationController
       redirect_to activity_path(activity.id)
     end
 
+  def destroy
+    activity = Activity.find params[:id]
+    activity.destroy
+    redirect_to activity_path
+  end
+
   def activity_params
     params.require(:activity).permit(:activity1, :activity2)
   end
