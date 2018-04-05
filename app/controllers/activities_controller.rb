@@ -3,8 +3,17 @@ class ActivitiesController < ApplicationController
 
 
   def create
-    activity = Activity.create activity_params
-    redirect_to activity_path(activity.id)
+    @activity = Activity.create activity_params
+
+    # @current_city = City.find_by :id => session[:city_id]
+    # if @activity.save
+    #   @city.activities << @activity  # need current city
+    #   redirect_to activity_path(@activity.id)
+    #
+    # else
+    #   redirect_to root_path
+    # end
+    redirect_to activity_path(@activity.id)
   end
 
 
@@ -25,7 +34,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:event)
+    params.require(:activity).permit(:event, :city_id)
   end
 
 end

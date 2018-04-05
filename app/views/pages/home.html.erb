@@ -19,11 +19,13 @@
 
 <div class="col-sm-6">
   <h2>Your Cities!</h2>
+  <p>Click to view your activities</p>
+
     <div class="list-group">
 
       <% @current_user.cities.each do |city| %>
-        <h4>
-          <%= link_to city.name, city_path(city.id) %></div>
+        <h4 class="list-group-item">
+          <%= link_to city.name, city_path(city.id) %>
         </h4>
       <% end %>
     </div>

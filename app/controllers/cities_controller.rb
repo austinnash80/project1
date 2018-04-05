@@ -5,6 +5,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.create city_params
+
     # @city = city.id
     # @user = @current_user.id
     if @city.save
@@ -12,7 +13,7 @@ class CitiesController < ApplicationController
       redirect_to city_path(@city.id)
 
     else
-      redirect_to root_path # it worked!
+      redirect_to root_path
     end
   end
 
