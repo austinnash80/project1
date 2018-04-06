@@ -1,24 +1,27 @@
-# README
+# Traveled
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Your Digital Travel Bookshelf
+### Store the cities  you have traveled to and the activities you did in those cities
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+* Sign up and log into your new account
+* Add a city that you have visited
+* Add activities/events that you did in that city
 
-* System dependencies
+#### Prerequisites
+Nothing needs to be installed or downloaded to start.
 
-* Configuration
+## Code Details
 
-* Database creation
+#### Built With
+* Ruby
+* Rails
+* bootstrap
 
-* Database initialization
 
-* How to run the test suite
+#### Authors
+Austin Nash - GA student
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### License
+This project is licensed under the MIT License - see the LicenseMIT.md file for details
